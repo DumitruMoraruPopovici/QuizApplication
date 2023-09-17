@@ -87,12 +87,6 @@
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>org.mockito</groupId>
-      <artifactId>mockito-core</artifactId>
-      <version>5.2.0</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <version>1.18.28</version>
@@ -112,6 +106,7 @@
   </properties>
 
   <build>
+    <defaultGoal>install</defaultGoal>
     <finalName>QuizApplication</finalName>
     <pluginManagement>
       <plugins>
@@ -119,6 +114,18 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-war-plugin</artifactId>
           <version>3.3.2</version>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.0.1</version>
+          <executions>
+            <execution>
+              <id>copy-dependencies</id>
+              <phase>package</phase>
+              <goals><goal>copy-dependencies</goal></goals>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>

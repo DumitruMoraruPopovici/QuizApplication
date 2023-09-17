@@ -1,1 +1,1 @@
-web: index.jsp
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* QuizApplication.webapp.index.jsp
