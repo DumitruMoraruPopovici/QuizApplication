@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* QuizApplication.webapp.index.jsp
+web:  java -jar target/12July-1.0-SNAPSHOT.jar
